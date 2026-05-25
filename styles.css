@@ -213,6 +213,23 @@ body {
 }
 .faq-body a:hover { color: var(--gold-dk); }
 
+.faq-figure {
+  margin: 18px 0 4px;
+}
+.faq-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+}
+.faq-figure figcaption {
+  margin-top: 10px;
+  font-size: 0.88rem;
+  font-style: italic;
+  color: var(--muted);
+  text-align: center;
+}
+
 /* ============================================================
    Footer
    ============================================================ */
@@ -243,6 +260,8 @@ body {
   color: #8a96ad;
 }
 
+
+
 /* ============================================================
    Responsive
    ============================================================ */
@@ -254,3 +273,4 @@ body {
   body { font-size: 18px; }
   .masthead-inner { padding: 42px 22px 38px; }
 }
+
