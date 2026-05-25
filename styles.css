@@ -1,0 +1,256 @@
+/* ============================================================
+   Kent for All — campaign site styles
+   Aesthetic: warm civic / editorial. Deep democratic blue,
+   newspaper cream, serif typography.
+   ============================================================ */
+
+:root {
+  --ink:      #16223a;   /* near-black navy for text          */
+  --navy:     #1d3461;   /* primary brand blue                */
+  --navy-dk:  #14254a;   /* darker blue for the donate block  */
+  --rule:     #c8b9a0;   /* warm hairline rule                */
+  --cream:    #f7f1e3;   /* page background                   */
+  --cream-2:  #efe6d2;   /* tinted section background         */
+  --gold:     #c8861d;   /* accent / call-to-action           */
+  --gold-dk:  #a96e10;
+  --paper:    #fffdf8;   /* card surface                      */
+  --muted:    #5d6470;   /* secondary text                    */
+  --maxw:     1080px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- layout helpers ---- */
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+.container-narrow { max-width: 720px; }
+
+.section { padding: 78px 0; }
+.section-tint { background: var(--cream-2); }
+
+/* ============================================================
+   Masthead
+   ============================================================ */
+.masthead {
+  background: var(--navy);
+  color: var(--cream);
+  border-bottom: 5px solid var(--gold);
+  text-align: center;
+}
+.masthead-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 56px 28px 48px;
+}
+.kicker {
+  margin: 0 0 18px;
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #b9c4dc;
+  font-family: "Newsreader", serif;
+}
+.wordmark {
+  margin: 0;
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-size: clamp(3rem, 9vw, 5.6rem);
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+}
+.tagline {
+  margin: 16px auto 0;
+  max-width: 520px;
+  font-style: italic;
+  font-size: 1.12rem;
+  color: #d8dfee;
+}
+.vote-banner {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 30px;
+  padding: 11px 24px;
+  background: var(--gold);
+  color: var(--navy-dk);
+  font-weight: 500;
+  font-size: 1rem;
+}
+.vote-banner-date { font-weight: 600; }
+.vote-banner-sep { font-size: 0.6rem; opacity: 0.7; }
+.vote-banner em { font-style: italic; }
+
+/* ============================================================
+   Section labels
+   ============================================================ */
+.section-label {
+  margin: 0 0 28px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--navy);
+  font-weight: 500;
+}
+
+/* ============================================================
+   "Why we're running" prose
+   ============================================================ */
+.prose { max-width: 680px; }
+.prose p { margin: 0 0 1.15em; }
+.lead {
+  font-family: "Fraunces", serif;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  color: var(--navy);
+}
+.prose-closing {
+  margin-top: 1.5em;
+  padding-left: 20px;
+  border-left: 3px solid var(--gold);
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+/* ============================================================
+   Candidates
+   ============================================================ */
+.candidates {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.candidate {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  padding: 32px 0 26px;
+  text-align: center;
+}
+.candidate-name {
+  margin: 0 20px 4px;
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 1.15;
+  color: var(--navy);
+}
+.candidate-role {
+  margin: 0 20px 14px;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold-dk);
+}
+.candidate-bio {
+  margin: 0 24px;
+  font-size: 0.98rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq { border-top: 1px solid var(--rule); }
+.faq-item { border-bottom: 1px solid var(--rule); }
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 22px 40px 22px 0;
+  position: relative;
+  font-family: "Fraunces", serif;
+  font-weight: 500;
+  font-size: 1.18rem;
+  color: var(--navy);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--gold-dk);
+  transition: transform 0.2s ease;
+}
+.faq-item[open] summary::after {
+  content: "\2013";
+}
+.faq-body {
+  padding: 0 40px 24px 0;
+}
+.faq-body p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.02rem;
+}
+.faq-body strong { color: var(--ink); }
+.faq-body a {
+  color: var(--navy);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold);
+  transition: color 0.15s ease;
+}
+.faq-body a:hover { color: var(--gold-dk); }
+
+/* ============================================================
+   Footer
+   ============================================================ */
+.footer {
+  background: var(--navy);
+  color: #c2cbdd;
+  text-align: center;
+  padding: 48px 0 40px;
+  border-top: 5px solid var(--gold);
+}
+.footer-wordmark {
+  margin: 0 0 10px;
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: var(--cream);
+}
+.footer-contact { margin: 0 0 18px; font-size: 1rem; }
+.footer-contact a {
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(200, 134, 29, 0.4);
+}
+.footer-contact a:hover { border-bottom-color: var(--gold); }
+.footer-fine {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #8a96ad;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 800px) {
+  .candidates { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
+  .section { padding: 56px 0; }
+}
+@media (max-width: 480px) {
+  body { font-size: 18px; }
+  .masthead-inner { padding: 42px 22px 38px; }
+}
